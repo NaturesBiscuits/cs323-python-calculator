@@ -12,7 +12,6 @@ def load_history():
         with open(HISTORY_FILE, "r") as f:
             return json.load(f)
     except json.JSONDecodeError:
-        # File exists but is empty or corrupted
         return []
 
 # Save history to non-volatile storage
@@ -26,59 +25,69 @@ def main():
     print("Calculator")
     while True:
         #SELECTING OPERATION
-        print("Select an Operation:")
+        print("Choose an Operation:")
         print("(1) Addition")
         print("(2) Subtraction")
+        print("(3) Multiplication")
         print("(0) Quit")
 
         myInput : int
         while True:
             myInput = int(getInputNumber("> "))
             if myInput >= 0 and myInput < 3: break
-            print("Please choose a number from 1 to 2.")
+            print("Please choose a number from 0 to 3.")
         
         if myInput == 0: break
 
-        firstNumber = getInputNumber("Enter first number: ")
-        secondNumber = getInputNumber("Enter second number: ")
+        a = getInputNumber("Enter first number: ")
+        b = getInputNumber("Enter second number: ")
         result = 0
-        operation = 0
+        operation_name = 0
 
         match myInput:
             case 1:
-                operation = "addition"
-                result = add(firstNumber, secondNumber)
+                operation_name = "addition"
+                result = add(a, b)
                 print(f"Result: {result}")
             case 2:
-                operation = "subtraction"
-                result = subtract(firstNumber, secondNumber)
+                operation_name = "subtraction"
+                result = subtract(a, b)
+                print(f"Result: {result}")
+            case 3:
+                operation_name = "multiplication"
+                result = multiply(a, b)
                 print(f"Result: {result}")
             case 0: break
-            case _: print("Error") #A Choice not corresponding to any operation
+            case _:
+                print("Error") #A Choice not corresponding to any operation
+                continue
 
         history.append({
-            "operation" : operation,
-            "a" : firstNumber,
-            "b" : secondNumber,
+            "operation" : operation_name,
+            "a" : a,
+            "b" : b,
             "result" : result
         })
         save_history(history)
     
     print("Calculator closed. History saved.")
 
-def getInputNumber(prompt) -> float:
+def getInputNumber(prompt):
     while True:
         try: return float(input(prompt))
-        except ValueError:
-            print("Invalid input. Please enter a number.\n")
+        except: print("Please enter a number.")
 
-# ADDITION FUNCTION (AT THE BOTTOM)
+# ADDITION FUNCTION
 def add(a, b):
     return a + b
 
-# SUBTRACTION
+# SUBTRACTION FUNCTION
 def subtract(a, b):
     return a - b
+
+# MULTIPLICATION FUNCTION
+def multiply(a, b):
+    return a * b
 
 if __name__ == "__main__":
     main()
