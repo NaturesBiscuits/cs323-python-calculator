@@ -12,7 +12,6 @@ def load_history():
         with open(HISTORY_FILE, "r") as f:
             return json.load(f)
     except json.JSONDecodeError:
-        # File exists but is empty or corrupted
         return []
 
 # Save history to non-volatile storage
@@ -24,9 +23,20 @@ def main():
     history = load_history()
 
     print("Calculator")
+    print("Choose an operation:")
+    print("1 - Addition")
+    print("2 - Subtraction")
     print("Type 'q' to quit\n")
 
     while True:
+        choice = input("Select operation (1/2): ")
+        if choice.lower() == "q":
+            break
+
+        if choice not in ("1", "2"):
+            print("Invalid choice. Please select 1 or 2.\n")
+            continue
+
         first = input("Enter first number: ")
         if first.lower() == "q":
             break
@@ -38,12 +48,18 @@ def main():
         try:
             a = float(first)
             b = float(second)
-            result = add(a, b)
+
+            if choice == "1":
+                result = add(a, b)
+                operation_name = "addition"
+            else:
+                result = subtract(a, b)
+                operation_name = "subtraction"
 
             print(f"Result: {result}\n")
 
             history.append({
-                "operation": "addition",
+                "operation": operation_name,
                 "a": a,
                 "b": b,
                 "result": result
@@ -56,9 +72,13 @@ def main():
 
     print("Calculator closed. History saved.")
 
-# ADDITION FUNCTION (AT THE BOTTOM)
+# ADDITION FUNCTION
 def add(a, b):
     return a + b
+
+# SUBTRACTION FUNCTION
+def subtract(a, b):
+    return a - b
 
 if __name__ == "__main__":
     main()
