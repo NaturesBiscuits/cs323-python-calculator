@@ -34,7 +34,7 @@ def main():
         myInput : int
         while True:
             myInput = int(getInputNumber("> "))
-            if myInput >= 0 and myInput < 3: break
+            if myInput >= 0 and myInput < 4: break
             print("Please choose a number from 0 to 3.")
         
         if myInput == 0: break
