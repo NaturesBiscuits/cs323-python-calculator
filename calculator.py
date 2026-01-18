@@ -29,14 +29,15 @@ def main():
         print("(1) Addition")
         print("(2) Subtraction")
         print("(3) Multiplication")
+        print("(4) Division")
         print("(0) Quit")
 
         myInput : int
         while True:
             myInput = int(getInputNumber("> "))
-            if myInput >= 0 and myInput < 4: break
-            print("Please choose a number from 0 to 3.")
-        
+            if myInput >= 0 and myInput < 5: break
+            print("Please choose a number from 0 to 4.")
+
         if myInput == 0: break
 
         a = getInputNumber("Enter first number: ")
@@ -57,6 +58,12 @@ def main():
                 operation_name = "multiplication"
                 result = multiply(a, b)
                 print(f"Result: {result}")
+                
+            case 4:
+                operation_name = "division"
+                result = divide(a, b)
+                print(f"Result: {result}")
+                
             case 0: break
             case _:
                 print("Error") #A Choice not corresponding to any operation
@@ -88,6 +95,13 @@ def subtract(a, b):
 # MULTIPLICATION FUNCTION
 def multiply(a, b):
     return a * b
+
+# Division FUNCTION
+
+def divide(a, b):
+    if b == 0:
+        return "Error: Division by zero"
+    return a / b
 
 if __name__ == "__main__":
     main()
