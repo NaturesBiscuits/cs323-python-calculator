@@ -6,7 +6,6 @@ John Esteve Butad
 John Vincent Flores
 
 ## Second Laboratory
-<img width="328" height="188" alt="image" src="https://github.com/user-attachments/assets/072e9f2d-63fb-4eda-9068-2cb99ce101f9" />
 
 | Method | Execution Order | GWA Output | Execution Time|
 | ---------- | ---------- | ---------- | ---------- |
