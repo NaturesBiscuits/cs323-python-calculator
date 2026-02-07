@@ -16,7 +16,9 @@ Multiprocessing, since it runs on a separate CPU core allowing each to execute s
 **2. Compare execution times between multithreading and multiprocessing.**
 In our run, Multithreading was slightly faster with 1.4746 seconds than Multiprocessing that has 1.5896 seconds. This is due to multithreading having lower overhead in creating threads compared to multiprocessing that spawns processes.
 
-**3. Can Python handle true parallelism using threads? Why or why not? 4. What happens if you input a large number of grades (e.g., 1000)? Which method is faster and why?** 
+**3. Can Python handle true parallelism using threads? Why or why not? 
+
+**4. What happens if you input a large number of grades (e.g., 1000)? Which method is faster and why?** 
 No, due to Global Interpreter Lock (GIL), it simply cannot achieve true parallelism, GIL allows only one thread to execute Python bytecode at a time.
 
 **5. Which method is better for CPU-bound tasks and which for I/O-bound tasks? **
