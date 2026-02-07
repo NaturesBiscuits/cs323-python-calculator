@@ -7,6 +7,7 @@ John Vincent Flores
 
 ## Second Laboratory
 <img width="328" height="188" alt="image" src="https://github.com/user-attachments/assets/072e9f2d-63fb-4eda-9068-2cb99ce101f9" />
+
 | Method | Execution Order | GWA Output | Execution Time|
 | ---------- | ---------- | ---------- | ---------- |
 | Multithreading| 92, 85, 90, 78| 92.0, 85.0, 90.0, 78.0| 0.01 seconds|
