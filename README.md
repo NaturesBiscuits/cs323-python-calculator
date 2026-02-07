@@ -7,10 +7,8 @@ John Vincent Flores
 
 ## Second Laboratory
 
-| Method | Execution Order | GWA Output | Execution Time|
-| ---------- | ---------- | ---------- | ---------- |
-| Multithreading| 92, 85, 90, 78| 92.0, 85.0, 90.0, 78.0 **Final GWA (all grades): 86.25** | 0.01 seconds|
-| Multiprocessing| 90, 78, 92, 85| 90.0, 78.0, 92.0, 85.0 **Final GWA (all grades): 86.25**| 1.13 seconds|
+<img width="661" height="397" alt="image" src="https://github.com/user-attachments/assets/646e1330-3ff5-4e07-95fd-4eec6f3a5439" />
+
 
 **1. Which approach demonstrates true parallelism in Python? Explain.**
 Multiprocessing, since it runs on a separate CPU core allowing each to execute simultaneously.
