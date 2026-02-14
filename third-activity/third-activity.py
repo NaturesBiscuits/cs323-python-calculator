@@ -48,7 +48,7 @@ def task_parallelism_demo(name, salary):
 
 
 if __name__ == "__main__":
-    task_parallelism_demo("Alice", 32000)
+    task_parallelism_demo("Edward", 35000)
 
 def task(task_id):
     start = time.time()
