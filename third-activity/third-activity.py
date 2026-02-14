@@ -7,22 +7,27 @@ import threading
 
 # Deduction functions
 def compute_sss(salary):
-    print(f"SSS running on thread: {threading.current_thread().name}")
+    thread = threading.current_thread().name
+    print(f"SSS running on thread: {thread}")
     return salary * 0.045
 
 def compute_philhealth(salary):
-    print(f"PhilHealth running on thread: {threading.current_thread().name}")
+    thread = threading.current_thread().name
+    print(f"PhilHealth running on thread: {thread}")
     return salary * 0.025
 
 def compute_pagibig(salary):
-    print(f"Pag-IBIG running on thread: {threading.current_thread().name}")
+    thread = threading.current_thread().name
+    print(f"Pag-IBIG running on thread: {thread}")
     return salary * 0.02
 
 def compute_tax(salary):
-    print(f"Tax running on thread: {threading.current_thread().name}")
+    thread = threading.current_thread().name
+    print(f"Tax running on thread: {thread}")
     return salary * 0.10
 
-
+ 
+  
 def task_parallelism_demo(name, salary):
     print(f"\n--- Task Parallelism for {name} (Salary: {salary}) ---")
 
