@@ -1,8 +1,7 @@
 #Part B
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor,ThreadPoolExecutor
 import time
 import os
-from concurrent.futures import ThreadPoolExecutor
 import threading
 
 # Deduction functions
@@ -26,28 +25,26 @@ def compute_tax(salary):
     print(f"Tax running on thread: {thread}")
     return salary * 0.10
 
- 
-  
+
+
 def task_parallelism_demo(name, salary):
     print(f"\n--- Task Parallelism for {name} (Salary: {salary}) ---")
 
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        futures = {
-            "SSS": executor.submit(compute_sss, salary),
-            "PhilHealth": executor.submit(compute_philhealth, salary),
-            "Pag-IBIG": executor.submit(compute_pagibig, salary),
-            "Tax": executor.submit(compute_tax, salary)
-        }
+    tasks = {
+        "SSS": compute_sss,
+        "PhilHealth": compute_philhealth,
+        "Pag-IBIG": compute_pagibig,
+        "Tax": compute_tax
+    }
 
-        results = {}
-        for key, future in futures.items():
-            results[key] = future.result()
+    with ThreadPoolExecutor(max_workers=len(tasks)) as executor:
+        futures = {label: executor.submit(func, salary) for label, func in tasks.items()}
+        results = {label: future.result() for label, future in futures.items()}
 
     total_deduction = sum(results.values())
 
-    # Display results
-    for k, v in results.items():
-        print(f"{k}: {v:.2f}")
+    for label, amount in results.items():
+        print(f"{label}: {amount:.2f}")
 
     print(f"Total Deduction: {total_deduction:.2f}")
 
