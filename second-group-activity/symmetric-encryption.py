@@ -24,10 +24,18 @@ def decrypt(key : int, message : str):
     return decryptedText
 
 if __name__ == "__main__":
-    test = "All human beings are born free and equal in dignity and rights. They are endowed with reason and conscience and should act towards one another in a spirit of brotherhood.".lower()
-    key = 5
-
-    encryptedText = encrypt(key, test)
-    decryptedText = decrypt(key, encryptedText)
-
-    print(f"Key: {key}\nInitial Text: {test}\nEncrypted Text: {encryptedText}\nDecrypted Text: {decryptedText}")
+    while(True):
+        print("(1) Encrypt\n(2) Decrypt\n(0) Quit")
+        selection = int(input("> "))
+        match selection:
+            case 1:
+                inputText = input("Enter Unencrypted Text: ")
+                inputKey = int(input("Enter Key: "))
+                print(encrypt(inputKey, inputText))
+            case 2:
+                inputText = input("Enter Encrypted Text: ")
+                inputKey = int(input("Enter Key: "))
+                print(decrypt(inputKey, inputText))
+            case 0:
+                print("Goodbye!")
+                break
