@@ -1,8 +1,8 @@
 Group Members:
-Achas, Dan Philip
-Belongilot, Clyde Joshua
-Butad, John Esteve
-Flores, John Vincent
+- Achas, Dan Philip
+- Belongilot, Clyde Joshua
+- Butad, John Esteve
+- Flores, John Vincent
 
 Applied Analysis: CSRS Case
 Based on the UP Mindanao CSRS breach, answer the following:
@@ -40,5 +40,6 @@ Is encryption alone sufficient to prevent data breaches? Explain.
 - No. Encryption alone is not sufficient to prevent data breaches.
 While it is a critical confidentiality control, it must be combined with other security measures such as access control, intrusion detection, secure authentication, regular patching, and monitoring.
 Encryption reduces breach impact, but preventing breaches requires a layered defense (defense-in-depth) approach.
+
 
 
