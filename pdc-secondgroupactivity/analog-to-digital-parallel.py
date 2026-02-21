@@ -47,6 +47,7 @@ def fill_worker():
     while True:
         ice = fill_queue.get()
         if ice is None:
+            tie_queue.put(None)
             fill_queue.task_done()
             break
         ice.fillWithWater()
@@ -57,6 +58,7 @@ def tie_worker():
     while True:
         ice = tie_queue.get()
         if ice is None:
+            freezer_queue.put(None)
             tie_queue.task_done()
             break
         ice.tie()
@@ -89,9 +91,16 @@ def run_parallel_pipeline(num_wrappers=5):
         executor.submit(tie_worker)
         executor.submit(freezer_worker)
 
+        #Adding work
+        for i in range(num_wrappers):
+            fill_queue.put(IceWrapper(i))
+
         fill_queue.join()
         tie_queue.join()
         freezer_queue.join()
+
+        #All work is done
+        fill_queue.put(None)
 
     print("\nAll ice wrappers processed.")
 
