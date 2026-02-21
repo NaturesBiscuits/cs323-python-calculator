@@ -39,10 +39,15 @@ tie_queue = queue.Queue()
 freezer_queue = queue.Queue()
 done_queue = queue.Queue()
 
+# Critical section: Freezer capacity (e.g., only 2 wrappers can be inside at once)
+FREEZER_CAPACITY = 2
+freezer_slots = threading.Semaphore(FREEZER_CAPACITY)
+
 def fill_worker():
     while True:
         ice = fill_queue.get()
         if ice is None:
+            fill_queue.task_done()
             break
         ice.fillWithWater()
         tie_queue.put(ice)
@@ -52,6 +57,7 @@ def tie_worker():
     while True:
         ice = tie_queue.get()
         if ice is None:
+            tie_queue.task_done()
             break
         ice.tie()
         freezer_queue.put(ice)
@@ -61,15 +67,20 @@ def freezer_worker():
     while True:
         ice = freezer_queue.get()
         if ice is None:
+            freezer_queue.task_done()
             break
-        ice.putInFreezer()
-        ice.takeFromFreezer()
+
+        # Critical Section: Acquire freezer slot
+        with freezer_slots:
+            ice.putInFreezer()
+            ice.takeFromFreezer()
+
         done_queue.put(ice)
         freezer_queue.task_done()
 
 
 def run_parallel_pipeline(num_wrappers=5):
-    # Create input
+    # Input Distribution
     for i in range(num_wrappers):
         fill_queue.put(IceWrapper(i))
 
