@@ -1,5 +1,12 @@
+#Sequential Sorting Algorithm 
+
 import random
 import time
+
+import multiprocessing as mp
+import heapq
+
+
 
 data = [random.randint(1, 1_000_000) for _ in range(100)]
 # Same ra na datasets atong gamiton guys
@@ -45,3 +52,5 @@ def main():
 if __name__ == "__main__":
     main()
     print("Goodbye :)")
+
+
