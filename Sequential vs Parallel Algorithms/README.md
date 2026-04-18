@@ -35,3 +35,14 @@ Parallel algorithms are only better for datasets.
 Sequential algorithms are better, for medium datasets.
 
 #######################################################################
+
+Clyde Joshua Belongilot:
+
+Based on the execution of the code, the sequential searching algorithm worked by checking each element one by one until the target value was found or the entire list was scanned. For smaller datasets, the process ran quickly because the loop only needed to go through a limited number of elements, making the execution time very short and efficient.
+
+However, as the dataset size increased, the execution time also increased because the algorithm still had to check each element in order. This shows that sequential searching becomes slower with larger datasets since it does not skip or divide the data, and everything is handled in a single continuous process.
+
+Overall, the sequential searching algorithm is reliable and simple to implement, and it performs well for small to medium datasets. However, its performance decreases as the dataset grows because it must always scan elements one by one, making it less efficient for large-scale data.
+
+
+#######################################################################
