@@ -1,23 +1,22 @@
 
 INDIVIDUAL REFLECTIONS
 
-John Esteve Butad: ( Sequential Sorting Algorithm )
+John Esteve Butad:
 
-Based on the results, the sequential sorting algorithm performed well for small and medium datasets.
-The algorithm was able to sort the data correctly by processing elements one at a time.
-For 1,000 and 100,000 elements, the sequential method showed stable and reliable performance.
-This is because sequential algorithms follow a simple step-by-step process without the need for additional processes or communication.
+Based on the results, the **sequential sorting algorithm** performed well for small and medium datasets.
+For 1,000 and 100,000 elements, the sequential method sorted the data correctly and in a reasonable amount of time.
+This is because sequential algorithms process the data step by step without additional overhead from multiple processes.
 
 However, when the dataset reached 1,000,000 elements, the execution time became much longer compared to smaller datasets.
-This shows that sequential sorting can slow down when handling very large amounts of data.
-The algorithm still worked correctly, but it required more time to finish sorting all the elements.
+This shows that sequential sorting requires more time as the dataset size increases because all operations are handled in a single sequence.
+The algorithm still produced accurate results, but performance decreased due to the larger workload.
 
-Sorting requires repeated comparisons and movements of data, which increases the workload as the dataset grows.
-Overall, sequential sorting algorithms are efficient for small to medium datasets.
+Overall, sequential sorting algorithms are reliable and efficient for small to medium datasets.
 Sequential algorithms are better for simple tasks and manageable data sizes.
-Sequential algorithms are reliable, but performance decreases when the dataset becomes very large.
+Sequential algorithms remain effective, but performance decreases when handling very large datasets.
 
-John Vincent Flores: (  Parallel Sorting Algorithm )
+
+John Vincent Flores:
 
     Based on the results sequential algorithms did better for medium datasets.
 Parallel algorithms only showed an advantage for datasets.
