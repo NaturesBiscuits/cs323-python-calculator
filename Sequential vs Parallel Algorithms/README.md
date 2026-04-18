@@ -17,7 +17,6 @@ Overall, sequential sorting algorithms are efficient for small to medium dataset
 Sequential algorithms are better for simple tasks and manageable data sizes.
 Sequential algorithms are reliable, but performance decreases when the dataset becomes very large.
 
-#######################################################################
 John Vincent Flores: (  Parallel Sorting Algorithm )
 
     Based on the results sequential algorithms did better for medium datasets.
