@@ -1,6 +1,9 @@
 
 INDIVIDUAL REFLECTIONS
 
+
+#######################################################################
+
 John Esteve Butad:
 
 Based on the results, the **sequential sorting algorithm** performed well for small and medium datasets.
@@ -15,6 +18,8 @@ Overall, sequential sorting algorithms are reliable and efficient for small to m
 Sequential algorithms are better for simple tasks and manageable data sizes.
 Sequential algorithms remain effective, but performance decreases when handling very large datasets.
 
+
+#######################################################################
 
 John Vincent Flores:
 
