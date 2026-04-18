@@ -1,8 +1,7 @@
 
-INDIVIDUAL REFLECTIONS
+INDIVIDUAL REFLECTIONS:
 
 
-#######################################################################
 
 John Esteve Butad:
 
@@ -35,11 +34,19 @@ Sequential algorithms are better, for medium datasets.
 
 #######################################################################
 
+Dan Philip Achas:
+
+As per the results, sequential sorting algorithms performed decently on small and medium datasets, however, its performance declined with increasing dataset size. Since sequential sorting algorithms could only manipulate one item at a time or so, that means the more items a sequential algorithm has to handle, the more time time the algorithm needs to fully sort all the required items.
+
+In contrast, parallel sorting algorithm could finish sorting all the items in much faster rate. Although in smaller datasets, the sequential sorting algorithms could outperform parallel sorting algorithms, but as the size of the dataset increased, performance of parallel sorting algorithm did not decline as sharply as sequential sorting algorithms. This is because parallel sorting algorithms divide the dataset into smaller chunks which are then sorted independently; the independent results are then merged together.
+
+Sequential algorithms and parallel algorithms performed similarly in searching tasks. Sequential search and parallel search algorithms performed similarly in small to medium datasets, but as datasets became large and very large, performance began to diverge; parallel search algorithms performed more efficiently compared to sequential search algorithms.
+
+#######################################################################
+
 Clyde Joshua Belongilot:
 
 Based on the execution of the code, the sequential searching algorithm worked by checking each element one by one until the target value was found or the entire list was scanned. For smaller datasets, the process ran quickly because the loop only needed to go through a limited number of elements, making the execution time very short and efficient.
 
 However, as the dataset size increased, the execution time also increased because the algorithm still had to check each element in order. This shows that sequential searching becomes slower with larger datasets since it does not skip or divide the data, and everything is handled in a single continuous process. The sequential searching algorithm is reliable and simple to implement, and it performs well for small to medium datasets. However, its performance decreases as the dataset grows because it must always scan elements one by one, making it less efficient for large-scale data.
 
-
-#######################################################################
