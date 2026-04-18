@@ -1,10 +1,24 @@
 
 INDIVIDUAL REFLECTIONS
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac nibh condimentum, sollicitudin arcu vitae, suscipit ante. Aliquam ut suscipit ante, non pellentesque felis. Suspendisse dictum nunc convallis pharetra pharetra. Mauris non tempus risus, quis facilisis urna. Nulla non rutrum elit. Vestibulum erat magna, fringilla dictum dapibus efficitur, ornare eget magna. Integer molestie eu nisi ac imperdiet. Sed placerat elit vestibulum, iaculis arcu non, malesuada mauris. 
+John Esteve Butad: ( Sequential Sorting Algorithm )
+
+Based on the results, the sequential sorting algorithm performed well for small and medium datasets.
+The algorithm was able to sort the data correctly by processing elements one at a time.
+For 1,000 and 100,000 elements, the sequential method showed stable and reliable performance.
+This is because sequential algorithms follow a simple step-by-step process without the need for additional processes or communication.
+
+However, when the dataset reached 1,000,000 elements, the execution time became much longer compared to smaller datasets.
+This shows that sequential sorting can slow down when handling very large amounts of data.
+The algorithm still worked correctly, but it required more time to finish sorting all the elements.
+
+Sorting requires repeated comparisons and movements of data, which increases the workload as the dataset grows.
+Overall, sequential sorting algorithms are efficient for small to medium datasets.
+Sequential algorithms are better for simple tasks and manageable data sizes.
+Sequential algorithms are reliable, but performance decreases when the dataset becomes very large.
 
 #######################################################################
-John Vincent Flores:
+John Vincent Flores: (  Parallel Sorting Algorithm )
 
     Based on the results sequential algorithms did better for medium datasets.
 Parallel algorithms only showed an advantage for datasets.
